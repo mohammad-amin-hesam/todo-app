@@ -6,7 +6,7 @@ import TodoOption from "./TodoOption";
 import { danger } from "../helpers/colors";
 
 const TodoItem = (props) => {
-  const { title, description, read, id } = props;
+  const { title, description, read, id, toggleRead, deleteItem } = props;
 
   return (
     <TodoListItem read={read}>
@@ -24,11 +24,23 @@ const TodoItem = (props) => {
         </p>
       </div>
       <div className="todoListOptions">
-        <TodoOption className="las la-trash" title="Delete task" />
+        <TodoOption
+          onClick={deleteItem}
+          className="las la-trash"
+          title="Delete task"
+        />
         {read ? (
-          <TodoOption className="las la-envelope-open" title="Mark as unread" />
+          <TodoOption
+            onClick={toggleRead}
+            className="las la-envelope-open"
+            title="Mark as unread"
+          />
         ) : (
-          <TodoOption className="las la-envelope" title="Mark as read" />
+          <TodoOption
+            onClick={toggleRead}
+            className="las la-envelope"
+            title="Mark as read"
+          />
         )}
       </div>
     </TodoListItem>

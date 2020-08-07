@@ -3,10 +3,10 @@ import React from "react";
 import styled from "styled-components";
 
 const TodoOption = (props) => {
-  const { className, title } = props;
+  const { className, title, onClick } = props;
 
   return (
-    <TodoOptionIcon>
+    <TodoOptionIcon onClick={onClick}>
       <i className={className} title={title || ""}></i>
     </TodoOptionIcon>
   );

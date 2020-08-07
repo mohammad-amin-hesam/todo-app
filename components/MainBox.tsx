@@ -31,6 +31,7 @@ const MainBoxContainer = styled.main(() => {
       fontSize: "1.9rem",
       color: "#333",
       padding: "0 30px",
+      marginTop: 30,
     },
     ".indexTodoBox": {
       background: "#fff",

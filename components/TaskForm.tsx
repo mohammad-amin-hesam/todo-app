@@ -17,22 +17,29 @@ const validateObj = Yup.object().shape({
     .required("Description is required"),
 });
 
-const initialValues = {
-  title: "",
-  description: "",
-};
-
 const TaskForm = (props) => {
-  const { handleSubmit, renderOptions } = props;
+  const { onSubmit, renderOptions, title, description } = props;
+
+  const initialValues = {
+    title: title || "",
+    description: description || "",
+  };
 
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       validationSchema={validateObj}
     >
       {(formProps) => {
-        const { values, errors, touched, handleChange, handleBlur } = formProps;
+        const {
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        } = formProps;
 
         const titleErr = errors.title && touched.title;
         const descriptionErr = errors.description && touched.description;
@@ -61,7 +68,7 @@ const TaskForm = (props) => {
               name="description"
             />
             <div className="taskFormButtonBox">
-              <button>Submit</button>
+              <button type="submit">Submit</button>
             </div>
           </TaskFormContainer>
         );
