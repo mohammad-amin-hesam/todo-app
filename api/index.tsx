@@ -1,4 +1,9 @@
-import { SET_DATA, FETCH_TASK } from "../redux/types";
+import {
+  SET_DATA,
+  FETCH_TASK,
+  FETCH_TODO_LIST,
+  FETCH_COMPLETED_LIST,
+} from "../redux/types";
 import { uniq_id } from "../helpers/props";
 
 export default class api {
@@ -15,10 +20,39 @@ export default class api {
 
   Setter = (data) => {
     localStorage.setItem("todo-list", JSON.stringify(data));
-    this.dispatch({ type: SET_DATA, data });
+    this.GetAll(this.getState().todoList.type, data);
   };
 
-  GetAll = () => this.dispatch({ type: SET_DATA, data: this.db });
+  GetAll = (type = "All", data = this.db) => {
+    switch (type) {
+      case "All":
+        this.dispatch({
+          type: SET_DATA,
+          data,
+          tabType: type,
+        });
+        break;
+
+      case "Todo":
+        this.dispatch({
+          type: FETCH_TODO_LIST,
+          data,
+          tabType: type,
+        });
+        break;
+
+      case "Completed":
+        this.dispatch({
+          type: FETCH_COMPLETED_LIST,
+          data,
+          tabType: type,
+        });
+        break;
+
+      default:
+        break;
+    }
+  };
 
   Get = (id) => {
     this.dispatch({

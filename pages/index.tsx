@@ -21,10 +21,11 @@ const Index = () => {
         <title>Todo List App</title>
       </Head>
       <MainBox
-        renderEmpty={() => <DefaultEmpty />}
+        renderEmpty={(title) => <DefaultEmpty title={title} />}
         renderBottom={() => <AddTodoBtn />}
         title={"Todo List"}
-        empty={todoList.length === 0}
+        empty={todoList.list.length === 0}
+        type={"indexPage"}
       >
         <TodoList />
       </MainBox>

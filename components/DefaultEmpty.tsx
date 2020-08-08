@@ -3,10 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import { primary } from "../helpers/colors";
 
-const DefaultEmpty = () => {
+const DefaultEmpty = (props) => {
+  const { title } = props;
+
   return (
     <DefaultEmptyBox>
-      <h2>Nothing found</h2>
+      <h2>Nothing found {title ? `in ${title} Tab` : ""}</h2>
       <i className="las la-frown"></i>
     </DefaultEmptyBox>
   );
@@ -21,7 +23,7 @@ const DefaultEmptyBox = styled.div(() => {
     margin: 30,
     color: primary,
     h2: {
-      fontSize: "1.4rem",
+      fontSize: "1.2rem",
       marginBottom: 5,
     },
     i: {

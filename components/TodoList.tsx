@@ -12,7 +12,7 @@ const TodoList = () => {
 
   return (
     <TodoListContainer>
-      {todoList.map((item, index) => {
+      {todoList.list.map((item, index) => {
         const key = `todoListItem-${item.id}-${index}`;
         return (
           <TodoItem

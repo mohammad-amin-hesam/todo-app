@@ -1,2 +1,4 @@
 export const SET_DATA = "SET_DATA";
 export const FETCH_TASK = "FETCH_TASK";
+export const FETCH_TODO_LIST = "FETCH_TODO_LIST";
+export const FETCH_COMPLETED_LIST = "FETCH_COMPLETED_LIST";

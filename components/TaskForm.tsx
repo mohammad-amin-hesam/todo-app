@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
-
 import styled from "styled-components";
 import { primary } from "../helpers/colors";
 
@@ -17,6 +16,17 @@ const validateObj = Yup.object().shape({
     .required("Description is required"),
 });
 
+const inputs = [
+  {
+    label: "Title",
+    name: "title",
+  },
+  {
+    label: "Description",
+    name: "description",
+  },
+];
+
 const TaskForm = (props) => {
   const { onSubmit, renderOptions, title, description } = props;
 
@@ -30,6 +40,7 @@ const TaskForm = (props) => {
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validateObj}
+      enableReinitialize={true}
     >
       {(formProps) => {
         const {
@@ -41,32 +52,28 @@ const TaskForm = (props) => {
           handleSubmit,
         } = formProps;
 
-        const titleErr = errors.title && touched.title;
-        const descriptionErr = errors.description && touched.description;
+        const getErr = (name) => errors[name] && touched[name];
 
         return (
           <TaskFormContainer onSubmit={handleSubmit} autoComplete="off">
             {renderOptions && renderOptions()}
-            <Input
-              label={"Title"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.title}
-              err={errors.title}
-              hasErr={titleErr}
-              id={"addTaskInputTitle"}
-              name="title"
-            />
-            <Input
-              label={"Description"}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.description}
-              err={errors.description}
-              hasErr={descriptionErr}
-              id={"addTaskInputDescription"}
-              name="description"
-            />
+            {inputs.map((item, index) => {
+              const key = `TaskFormInputListItem${item.name}${index}`;
+              return (
+                <Fragment key={key}>
+                  <Input
+                    label={item.label}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values[item.name]}
+                    err={errors[item.name]}
+                    hasErr={getErr(item.name)}
+                    id={key}
+                    name={item.name}
+                  />
+                </Fragment>
+              );
+            })}
             <div className="taskFormButtonBox">
               <button type="submit">Submit</button>
             </div>

@@ -1,6 +1,6 @@
-export const fetchTasks = () => (dispatch, getState, { Api }) => {
+export const fetchTasks = (type = "All") => (dispatch, getState, { Api }) => {
   const api = new Api({ dispatch, getState });
-  api.GetAll();
+  api.GetAll(type);
 };
 
 export const fetchTask = (id) => (dispatch, getState, { Api }) => {
