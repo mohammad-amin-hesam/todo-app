@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a){return {"/create_task":[a],"/tasks/[id]":[a]}}("static\u002Fchunks\u002F3f5184f4c49430efe5a650a7f1c9243025969dfa.22009207bbd71040febf.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

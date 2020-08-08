@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { FETCH_TASK } from \"../types\";\nconst item = {\n  title: \"\",\n  description: \"\",\n  id: \"\",\n  read: false\n};\nexport const task = (state = item, action) => {\n  switch (action.type) {\n    case FETCH_TASK:\n      return action.item;\n\n    default:\n      return state;\n  }\n};","map":null,"metadata":{},"sourceType":"module"}

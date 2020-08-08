@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var deleteTask = function deleteTask(id) {\n  return function (dispatch, getState, _ref) {\n    var Api = _ref.Api;\n    var api = new Api({\n      dispatch: dispatch,\n      getState: getState\n    });\n    api.Delete(id);\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

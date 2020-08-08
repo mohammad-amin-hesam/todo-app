@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Router from \"next/router\";\nexport const createTask = data => (dispatch, getState, {\n  Api\n}) => {\n  const api = new Api({\n    dispatch,\n    getState\n  });\n  api.Post(data);\n  Router.push(\"/\");\n};","map":null,"metadata":{},"sourceType":"module"}

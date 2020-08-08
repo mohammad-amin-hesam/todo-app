@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SET_DATA = \"SET_DATA\";","map":{"version":3,"sources":["/home/amin/Templates/todo-sample/redux/types.tsx"],"names":["SET_DATA"],"mappings":"AAAA,OAAO,MAAMA,QAAQ,GAAG,UAAjB","sourcesContent":["export const SET_DATA = \"SET_DATA\";\n"]},"metadata":{},"sourceType":"module"}

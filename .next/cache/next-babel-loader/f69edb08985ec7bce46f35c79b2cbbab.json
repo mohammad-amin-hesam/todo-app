@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SET_DATA = \"SET_DATA\";\nexport const FETCH_TASK = \"FETCH_TASK\";\nexport const FETCH_TODO_LIST = \"FETCH_TODO_LIST\";\nexport const FETCH_COMPLETED_LIST = \"FETCH_COMPLETED_LIST\";","map":null,"metadata":{},"sourceType":"module"}

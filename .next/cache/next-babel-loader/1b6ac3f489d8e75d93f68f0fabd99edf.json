@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\n\nconst ShowTask = () => {\n  return __jsx(\"div\", null, \"Show task\");\n};\n\nexport default ShowTask;","map":null,"metadata":{},"sourceType":"module"}

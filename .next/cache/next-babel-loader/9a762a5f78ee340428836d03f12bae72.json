@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from \"redux\";\nexport default combineReducers({\n  test: function test() {\n    return \"test\";\n  }\n});","map":null,"metadata":{},"sourceType":"module"}

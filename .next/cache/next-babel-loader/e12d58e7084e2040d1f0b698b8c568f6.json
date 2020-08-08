@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const editTask = (id, data) => (dispatch, getState, {\n  Api\n}) => {\n  const api = new Api({\n    dispatch,\n    getState\n  });\n  api.Put(id, data);\n};","map":null,"metadata":{},"sourceType":"module"}

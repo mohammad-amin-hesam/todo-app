@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from \"redux\";\nimport { todoList } from \"./todoListReducer\";\nimport { task } from \"./fetchTaskReducer\";\nexport default combineReducers({\n  todoList: todoList,\n  task: task\n});","map":null,"metadata":{},"sourceType":"module"}
